@@ -22,7 +22,7 @@ namespace Assets.Scripts.StateManagers.States.GameStates
         {
             GameEngines.GameEngine.SetLevel(obj);
 
-            Parent.Activate<RunGameState>();
+            Parent.Activate<LoadGameState>();
         }
 
         protected override void Update()

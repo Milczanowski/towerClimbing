@@ -13,7 +13,7 @@ namespace Assets.Scripts.StateManagers.States
         protected override void InitStates()
         {
             AddState<LevelListState>(this);
-            AddState<RunGameState>(this);
+            AddState<LoadGameState>(this);
         }
 
         protected override IEnumerator Init()

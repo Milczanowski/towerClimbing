@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.StateManagers.States.GameStates
 {
-    class RunGameState:State
+    class LoadGameState:State
     {
         protected override IEnumerator Init()
         {
@@ -16,15 +16,6 @@ namespace Assets.Scripts.StateManagers.States.GameStates
 
             yield return base.Init();
         }
-
-        protected override void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-                Parent.Activate<LevelListState>();
-
-            base.Update();
-        }
-
 
         protected override IEnumerator End()
         {
