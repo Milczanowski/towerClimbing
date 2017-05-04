@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.GUI.Screens
 {
-    class LevelList:MonoBehaviour
+    class LevelList: Screen
     {
         [SerializeField]
         private Transform container;
@@ -17,8 +17,6 @@ namespace Assets.Scripts.GUI.Screens
         private Level levelPrefabs;
 
         private List<Level> LevelsList { get; set; }
-
-
         public void LoadLevels(Action<DataBases.Models.Level> onClick)
         {
             if (LevelsList == null)
@@ -29,7 +27,6 @@ namespace Assets.Scripts.GUI.Screens
             foreach (var level in DataBase.Levels)
                 LevelsList.Add(Instantiate(levelPrefabs, container).Set(level, onClick));
         }
-
         public void UnLoadLevels()
         {
             foreach (Level child in LevelsList)

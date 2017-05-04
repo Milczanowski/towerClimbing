@@ -2,7 +2,7 @@
 
 namespace Assets.Scripts.GUI.Screens
 {
-    class InitPanel : MonoBehaviour
+    class InitPanel : Screen
     {
     }
 }

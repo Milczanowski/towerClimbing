@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.GUI.Screens
 {
-    class Menu: MonoBehaviour
+    class Menu: Screen
     {
         [SerializeField]
         private Button startButton;
@@ -49,6 +49,16 @@ namespace Assets.Scripts.GUI.Screens
             }
         }
 
-             
+        public override void RemoveAllListeners()
+        {
+            StartButton.onClick.RemoveAllListeners();
+            OptionsButton.onClick.RemoveAllListeners();
+            CreditsButton.onClick.RemoveAllListeners();
+            ExitButtons.onClick.RemoveAllListeners();
+
+            base.RemoveAllListeners();
+        }
+
+
     }
 }

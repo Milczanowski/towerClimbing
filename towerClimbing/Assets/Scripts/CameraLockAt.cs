@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Assets.Scripts.GUI.Screens
+namespace Assets.Scripts
 {
-    class Options : Screen
+    class CameraLockAt: MonoBehaviour
     {
+        Ball ball;
     }
 }

@@ -28,6 +28,9 @@ namespace Assets.Scripts.GUI
         [SerializeField]
         private LevelList levelList;
 
+        [SerializeField]
+        private ExitGame exitGame;
+
         private void Awake()
         {
             if (!instance)
@@ -87,6 +90,14 @@ namespace Assets.Scripts.GUI
             get
             {
                 return instance.levelList;
+            }
+        }
+
+        public static ExitGame ExitGame
+        {
+            get
+            {
+                return instance.exitGame;
             }
         }
     }

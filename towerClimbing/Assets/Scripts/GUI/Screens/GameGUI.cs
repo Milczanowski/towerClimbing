@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.GUI.Screens
 {
-    class GameGUI : MonoBehaviour
+    class GameGUI : Screen
     {
     }
 }

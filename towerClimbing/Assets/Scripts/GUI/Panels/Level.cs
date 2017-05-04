@@ -23,6 +23,7 @@ namespace Assets.Scripts.GUI.Panels
         {
             LevelData = levelData;
             OnClick = onClick;
+            runButton.onClick.RemoveAllListeners();
             runButton.onClick.AddListener(OnButtonClick);
 
             levelName.text = LevelData.Name;

@@ -12,14 +12,20 @@ namespace Assets.Scripts.StateManagers.States.GameStates
     {
         protected override IEnumerator Init()
         {
-            ScreensManager.GameGUI.gameObject.SetActive(true);
+            ScreensManager.LoadingPanel.gameObject.SetActive(true);
 
+            yield return GameEngines.GameEngine.LoadLevel(OnFinish, ScreensManager.LoadingPanel.OnProgress);
             yield return base.Init();
+        }
+
+        private void OnFinish()
+        {
+            Parent.Activate<RunGameState>();
         }
 
         protected override IEnumerator End()
         {
-            ScreensManager.GameGUI.gameObject.SetActive(false);
+            ScreensManager.LoadingPanel.gameObject.SetActive(false);
 
             yield return base.End();
         }

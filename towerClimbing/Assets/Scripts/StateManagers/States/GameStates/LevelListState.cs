@@ -21,7 +21,6 @@ namespace Assets.Scripts.StateManagers.States.GameStates
         private void OnClick(Level obj)
         {
             GameEngines.GameEngine.SetLevel(obj);
-
             Parent.Activate<LoadGameState>();
         }
 

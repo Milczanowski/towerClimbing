@@ -13,6 +13,16 @@ namespace Assets.Scripts
         [SerializeField]
         private Rigidbody2D rigidBody2D;
 
+        private bool OnGround
+        {
+            get;set;
+        }
+
+        private void Awake()
+        {
+            OnGround = false;
+        }
+
         public Rigidbody2D Rigidbody2D
         {
             get { return rigidBody2D; }
@@ -21,7 +31,17 @@ namespace Assets.Scripts
 
         private void OnMouseDown()
         {
-            Rigidbody2D.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
+            Rigidbody2D.AddForce(new Vector2(OnGround? 3:0, 5), ForceMode2D.Impulse);
+        }
+
+        private void OnCollisionExit2D(Collision2D collision)
+        {
+            OnGround = false;
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            OnGround = true;
         }
     }
 }

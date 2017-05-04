@@ -9,6 +9,8 @@ namespace Assets.Scripts.StateManagers.States
     {
         protected override IEnumerator Init()
         {
+            ScreensManager.Menu.RemoveAllListeners();
+
             ScreensManager.Menu.StartButton.onClick.AddListener(OnStartButtonClick);
             ScreensManager.Menu.CreditsButton.onClick.AddListener(OnCreditsButtonClick);
             ScreensManager.Menu.OptionsButton.onClick.AddListener(OnOptionsButtonClick);

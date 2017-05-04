@@ -14,6 +14,8 @@ namespace Assets.Scripts.StateManagers.States
         {
             AddState<LevelListState>(this);
             AddState<LoadGameState>(this);
+            AddState<RunGameState>(this);
+            AddState<ExitGameState>(this);
         }
 
         protected override IEnumerator Init()

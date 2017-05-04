@@ -6,7 +6,11 @@ using UnityEngine;
 
 namespace Assets.Scripts.GUI.Screens
 {
-    class Options : Screen
+    class Screen: MonoBehaviour
     {
+        public virtual void RemoveAllListeners()
+        {
+
+        }
     }
 }

@@ -13,7 +13,6 @@ namespace Assets.Scripts.StateManagers
         private State Active { get; set; }
         private List<State> Child { get; set; }
         private static State Current { get; set; }
-
         protected State()
         {
             Child = new List<State>();
@@ -25,17 +24,14 @@ namespace Assets.Scripts.StateManagers
             Child = new List<State>();
             InitStates();
         }
-
         protected virtual void InitStates()
         {
 
         }
-
         protected internal void Activate<T>() where T : State
         {
             StateManager.StartCorutine(_Activate<T>());
         }
-
         protected internal IEnumerator _Activate<T>() where T : State
         {
             Debug.Log("Activate: " + typeof(T));
@@ -55,12 +51,10 @@ namespace Assets.Scripts.StateManagers
 
             yield return Active.Init();
         }
-
         protected internal void Deactivate<T>() where T : State
         {
             StateManager.StartCorutine(_Deactivate<T>());
         }
-
         protected internal IEnumerator _Deactivate<T>() where T : State
         {
             if (Active != null)
@@ -79,7 +73,6 @@ namespace Assets.Scripts.StateManagers
         }
         protected virtual IEnumerator Init()
         {
-
             yield return null;
         }
         protected virtual IEnumerator End()
@@ -110,7 +103,6 @@ namespace Assets.Scripts.StateManagers
 
             Child.Add(state);
         }
-
         public static bool CheckState<T>()
         {
             return Current != null && Current.GetType() == typeof(T);
